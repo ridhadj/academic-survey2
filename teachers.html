@@ -92,7 +92,7 @@ function send(){
     q1:document.querySelector('input[name="q1"]:checked')?.value || ""
   };
 
-  fetch("PUT_WEB_APP_URL_HERE",{
+  fetch("https://script.google.com/macros/s/AKfycbyEaq3Qsw6XoM0MPfgen2wXgrDXW82d87RwFuXFK2oD75pq_JRKMC3JBa93h12ZromG/exec",{
     method:"POST",
     body:JSON.stringify(data)
   }).then(()=>alert("تم الإرسال بنجاح"));
