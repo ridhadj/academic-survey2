@@ -93,9 +93,19 @@ function send(){
   };
 
   fetch("https://script.google.com/macros/s/AKfycbyEaq3Qsw6XoM0MPfgen2wXgrDXW82d87RwFuXFK2oD75pq_JRKMC3JBa93h12ZromG/exec",{
-    method:"POST",
-    body:JSON.stringify(data)
-  }).then(()=>alert("تم الإرسال بنجاح"));
+    method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(data)
+})
+.then(r => r.text())
+.then(t => {
+  alert("تم الإرسال بنجاح");
+})
+.catch(e => {
+  alert("فشل الإرسال");
+});
 }
 </script>
 
